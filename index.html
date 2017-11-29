@@ -5,7 +5,7 @@
 		<meta name = "viewport" content="width=device-width">
 		<title>News Conglomeration</title>
 		<link href="styles.css" rel="stylesheet" type="text/css"/>
-		<script scr="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -19,30 +19,28 @@
 					<img src="https://seeklogo.com/images/T/twitter-2012-negative-logo-5C6C1F1521-seeklogo.com.png" alt="Twitter logo">
 					<img src="https://i1.wp.com/fmguido.com/wp-content/uploads/2017/06/the-guardian-logo.png" alt="The Guardian Logo">
 				</article>
-				<article class="search-bar" id="main-page-search-bar">
-					<form label="Search for news">
-						<input type="text" placeholder="Search for news...">
-						<button class="search-button" type="submit">Go!</button>
+				<article class="search" id="main-page-search-bar">
+					<form action="#" class="search-form" label="Search for news">
+						<input class="keyword" type="text" placeholder="Search for news...">
+						<button class="submit-button" type="submit">Go!</button>
 					</form>
 				</article>
 				<article id="page-description">
-					<p>News is rarely unbiased. As a citizen looking for the whole truth, the conglomerator recognizes your need for news coverage from a variety of sources. Enter your keyword and be transported to side by side articles from the Guardian and the Times, complete with tweets on the topic from real people. It's reaching the truth in the middle...made easy.  </p>					
+					<p>News is rarely unbiased. As a citizen looking for the whole truth, the conglomerator recognizes your need for news coverage from a variety of sources. Enter your keyword and be transported to side by side articles from the Guardian and the Times, complete with tweets on the topic from real people. It's reaching the truth in the middle...made easy.  </p>			
 				</article>
 			</section>
 		</div>
 		
 		<div class="results-page">
 			<section id="google-image-results">
-				
 			</section>
 			<section id="new-york-times-results">
-				
 			</section>
 			<section id="guardian-results">
-				
 			</section>
 			<section id="twitter-results"></section>
 		</div>
 
 		<script src="index.js"></script>
 	</body>
+	</html>
