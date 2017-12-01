@@ -7,6 +7,7 @@ function getDataFromGuardianApi(searchTerm, callback){
 	const query = {
 		'api-key': "1b040e7b-1d37-430c-8009-215bb9516578",
 		'format': 'json',
+		'show-fields': 'thumbnail',
   		'q': `${searchTerm}`
 };
 $.getJSON(GUARDIAN_SEARCH_URL, query, callback);
@@ -23,6 +24,7 @@ function renderGuardianResult(result){
 	return `
 	<article>
 		<a href="${result.webUrl}">
+		<img src="${result.fields.thumbnail}">
 			<h2>${result.webTitle}</h2>
 		</a>
 
@@ -68,7 +70,7 @@ function renderTimesResult(result){
 	return `
 	<article>
 		<a href="${result.web_url}">
-			<img class="thumbnail" src="${result.multimedia.url}">
+			<img class="thumbnail" src="http://www.nytimes.com/${result.multimedia[2].url}">
 			<h2>${result.headline.main}</h2>
 		</a>
 		<h3>${result.snippet}</h3>
