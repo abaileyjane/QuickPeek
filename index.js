@@ -1,4 +1,4 @@
-const IMAGE_SEARCH_URL= ''
+const IMAGE_SEARCH_URL= 'https://www.googleapis.com/customsearch/v1?'
 const NYTIMES_SEARCH_URL="https://api.nytimes.com/svc/search/v2/articlesearch.json"
 const TWITTER_SEARCH_URL="https://api.twitter.com/1.1/search/tweets.json"
 const GUARDIAN_SEARCH_URL ="https://content.guardianapis.com/search"
@@ -31,25 +31,33 @@ function renderGuardianResult(result){
 		`
 }
 
+function getDataFromGoogleImageApi(searchTerm, callback){
+	const query = {
+		'key': "AIzaSyA1WspdRy5p3ax5ZbbQKaOB-eDI34H-NPI",
+		'cx': '008250477201985305049:2mep0j_l_ee',
+  		'q': `${searchTerm}`
+};
+$.getJSON(IMAGE_SEARCH_URL, query, callback);
+}
 
-// function getDataFromTwitterApi(searchTerm, callback){
-// 	const query = {
-//   		'q': `${searchTerm}`
-// };
-// $.getJSON(TWITTER_SEARCH_URL, query, callback);
-// }
+function displayGoogleImage(data){
+	console.log(data, "displayGoogleImage ran");
+	const results = data.items.map((item,index)=> renderGoogleImage(item));
+	$('.google-image-results').append(results);
+}	
 
-// function displayTweets(data){
-// 	console.log(data, "displayTweets ran");
-// 	const results = data.response.docs.map((item,index)=> renderTwitterResult(item));
-// 	$('.twitter-results').html(results);
-// }	
+function renderGoogleImage(items){
+	console.log("renderGoogleImage ran")
+	return `
+	<article>
+		<a href="${items.link}">
+		<img src="${items.pagemap.cse_image[0].src}">
+			<h2>${items.title}</h2>
+			<h3>${items.snippet}</h3>
+		</a>
 
-// function renderTwitterResult(result){
-// 	console.log("renderTimesResult ran")
-// 	return 
-// 	"<p> look it posted"
-// }
+		`
+}
 
 function getDataFromNYTimesApi(searchTerm, callback){
 	const query = {
@@ -90,9 +98,6 @@ function renderTimesResult(result){
 //	}
 //}
 
-function displayGoogleImage(){
-
-}
 function watchSubmit(){
 	$(".submit-button").click(event=>{
 		console.log("watchSubmit ran");
@@ -100,8 +105,8 @@ function watchSubmit(){
 		const query = $(".keyword").val();
 		console.log(query);
 		getDataFromNYTimesApi(query, displayTimesArticles);
-		//getDataFromTwitterApi(query, displayTweets)
 		getDataFromGuardianApi(query, displayGuardianArticles);
+		getDataFromGoogleImageApi(query, displayGoogleImage);
 
 
 	})
