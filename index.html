@@ -2,46 +2,48 @@
 <html lang=en>
 	<head>
 		<meta charset="utf-8">
-		<meta name = "viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>News Conglomeration</title>
 		<link href="styles.css" rel="stylesheet" type="text/css"/>
+		<link href="floatgrid.css" rel="stylesheet" type="text/css"/>
+
+		<link href="https://fonts.googleapis.com/css?family=Monoton|Special+Elite" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 
 	<body>
 		<div class="main-search-page">
-			<section id="main-search-page-heading">
-				<article id="page-title">
-					<h1>The Conglomerator</h1>
-				</article>
-				<article id="logos">
-					<img src="http://thisisstory.com/wp-content/uploads/2015/03/New-York-Times-logo.png" alt="New York Times logo">
-					<img src="https://seeklogo.com/images/T/twitter-2012-negative-logo-5C6C1F1521-seeklogo.com.png" alt="Twitter logo">
-					<img src="https://i1.wp.com/fmguido.com/wp-content/uploads/2017/06/the-guardian-logo.png" alt="The Guardian Logo">
-				</article>
-				<article class="search" id="main-page-search-bar">
+				<div id="title-container" class="col-6">
+					
+						<h1>The Conglomerator</h1>
+								
+					<section class="heading-logos">
+						<img class="logo col-3" src="http://thisisstory.com/wp-content/uploads/2015/03/New-York-Times-logo.png" alt="New York Times logo" >
+						<img class="logo col-3" src="https://i1.wp.com/fmguido.com/wp-content/uploads/2017/06/the-guardian-logo.png" alt="The Guardian Logo">
+					</section>
+				</div>
+				<br>
+				<div class="search col-3" id="main-page-search-bar" >
 					<form action="#" class="search-form" label="Search for news">
 						<input class="keyword" type="text" placeholder="Search for news...">
 						<button class="submit-button" type="submit">Go!</button>
 					</form>
+				</div>
+				<article class="page-description col-4">
+					<p>News is rarely unbiased. As a citizen looking for the whole truth, the conglomerator recognizes your need for news coverage from a variety of sources. Enter your keyword and be transported to side by side articles from the Guardian and the Times. It's reaching the truth in the middle...made easy.  </p>			
 				</article>
-				<article id="page-description">
-					<p>News is rarely unbiased. As a citizen looking for the whole truth, the conglomerator recognizes your need for news coverage from a variety of sources. Enter your keyword and be transported to side by side articles from the Guardian and the Times, complete with tweets on the topic from real people. It's reaching the truth in the middle...made easy.  </p>			
-				</article>
-			</section>
 		</div>
 		
 		<div class="results-page">
-			<section class="google-image-results">
-				
-			</section>
-			<section class="new-york-times-results">
-				<h2>New York Times</h2>
-			</section>
-			<section class="guardian-results">
-				<h2>The Guardian</h2>
-			</section>
-			<section class="twitter-results"></section>
+			<div class="nyTimes col-6">
+				<heading class="ny-section-heading"></heading>
+				<section class="new-york-times-results">
+				</section>
+			</div>
+			<div class="guardian col-6">
+				<heading class="guardian-section-heading"></heading>
+				<section class="guardian-results"></section>
+			</div>
 		</div>
 
 		<script src="index.js"></script>

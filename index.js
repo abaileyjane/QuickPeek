@@ -16,6 +16,7 @@ $.getJSON(GUARDIAN_SEARCH_URL, query, callback);
 function displayGuardianArticles(data){
 	console.log(data, "displayGuardianArticles ran");
 	const results = data.response.results.map((item,index)=> renderGuardianResult(item));
+	$('.guardian-section-heading').html('<h2>The Guardian</h2>')
 	$('.guardian-results').append(results);
 }	
 
@@ -25,7 +26,7 @@ function renderGuardianResult(result){
 	<article>
 		<a href="${result.webUrl}">
 		<img src="${result.fields.thumbnail}">
-			<h2>${result.webTitle}</h2>
+			<h3>${result.webTitle}</h3>
 		</a>
 
 		`
@@ -42,22 +43,15 @@ $.getJSON(IMAGE_SEARCH_URL, query, callback);
 
 function displayGoogleImage(data){
 	console.log(data, "displayGoogleImage ran");
-	const results = data.items.map((item,index)=> renderGoogleImage(item));
-	$('.google-image-results').append(results);
-}	
-
-function renderGoogleImage(items){
-	console.log("renderGoogleImage ran")
-	return `
-	<article>
-		<a href="${items.link}">
-		<img src="${items.pagemap.cse_image[0].src}">
-			<h2>${items.title}</h2>
-			<h3>${items.snippet}</h3>
-		</a>
-
-		`
+	$('.main-search-page').html('<div class="large-image col-6"></div><section class="google-image-results col-12"><ul class="slides"></ul></section>');
+	for (let i=0; i<10; i++){
+		const imageUrl= data.items[i].pagemap.cse_image[0].src;
+			$('.slides').append(`<li class="slide col-1" ><img src="${imageUrl}"/></li>`)}
 }
+
+//function renderGoogleImage(imageUrl){
+	//return `<li class="slide col-1" ><img src="${imageUrl}"/></li>`
+//}
 
 function getDataFromNYTimesApi(searchTerm, callback){
 	const query = {
@@ -70,8 +64,8 @@ $.getJSON(NYTIMES_SEARCH_URL, query, callback);
 function displayTimesArticles(data){
 	console.log(data, "displayTimesArticles ran");
 	const results = data.response.docs.map((item,index)=> renderTimesResult(item));
-	$('.new-york-times-results').append(results);
-}	
+	$('.ny-section-heading').html('<h2>The New York Times</h2>');
+	$('.new-york-times-results').append(results);}	
 
 function renderTimesResult(result){
 	console.log("renderTimesResult ran")
@@ -79,24 +73,12 @@ function renderTimesResult(result){
 	<article>
 		<a href="${result.web_url}">
 			<img class="thumbnail" src="http://www.nytimes.com/${result.multimedia[2].url}">
-			<h2>${result.headline.main}</h2>
+			<h3>${result.headline.main}</h3>
 		</a>
-		<h3>${result.snippet}</h3>
+		<p>${result.snippet}</p>
 		`
 }
 
-//function getDataFromGoogleImageApi(searchTerm, callback){
-//	console.log("getDataFromGoogleImageApi ran");
-//	const query = {
-//		searchType = "image",
-//		part: 'snippet',
-//		q: `${searchTerm}`,
-//		key: 'AIzaSyCctJU2Yz0r1F6LdJUdC92s5BXEws0lFP8'
-//		per_page: 20
-//	};
-//	$.getJSON()
-//	}
-//}
 
 function watchSubmit(){
 	$(".submit-button").click(event=>{
@@ -107,15 +89,20 @@ function watchSubmit(){
 		getDataFromNYTimesApi(query, displayTimesArticles);
 		getDataFromGuardianApi(query, displayGuardianArticles);
 		getDataFromGoogleImageApi(query, displayGoogleImage);
-
-
+		watchImageClick();
 	})
 }
 
-function link(){
-	console.log("this is linked");
+function watchImageClick(){
+	$(".slide").on('click', function(event){
+		event.preventDefault();
+		const thumbnailUrl= $(this).find('img').attr('src');
+		console.log('the click registered!! this is the URL', thumbnailUrl)
+		$('.large-image').attr('src', thumbnailUrl);
+	})
 }
 
-$(link);
 
 $(watchSubmit);
+$(watchImageClick);
+//$('#slider .slides').animate({margin-left -=720}, 1000);

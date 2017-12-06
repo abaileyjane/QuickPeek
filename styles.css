@@ -1,0 +1,88 @@
+/*font-family: 'Monoton', cursive;
+font-family: 'Special Elite', cursive;*/
+
+img{
+	max-height: 100%
+	max-width:100%;
+}
+
+body {
+	background-color: darkseagreen;
+}
+
+.main-search-page{
+	display: block;
+}
+.results-page{
+	display: block;
+}
+.new-york-times-results,.guardian-results {
+	overflow:auto;
+}
+
+.nyTimes, .guardian{
+	background-color:aliceblue;
+	border-style: solid;
+	border-color: black;
+	border-width:2px;
+	height:500px;
+	overflow: auto;
+
+}
+
+
+#title-container{
+	align-items: center;
+	position: relative;
+	display: inline-block;
+	height:200px;
+	background-color: white;
+}
+
+.ny-section-heading, .guardian-section-heading{
+	background-color: green;
+	height:100px;
+
+}
+h1{
+	position: absolute;
+	font-size: 10vh;
+	left:0;
+	right:0;
+	margin-right: auto;
+	color: black;
+	top:0;
+	font-family: 'Monoton', cursive;
+}
+
+h2{
+	font-size: 10vh;
+	color: black;
+	top:0;
+	font-family: 'Monoton', cursive;
+
+}
+
+
+.heading-logos{
+	height:inherit;
+	margin-left: auto;
+	margin-right:auto;
+	opacity: 0.2;
+	max-height: 100%;
+}
+
+
+.large-image{
+	background-color: purple;
+	height:500px;
+}
+
+
+.slide {
+	float: left;
+	list-style-type: none;
+	max-width: 8.3333333%
+	height:auto;
+	object-fit: scale-down;
+}
