@@ -43,10 +43,19 @@ $.getJSON(IMAGE_SEARCH_URL, query, callback);
 
 function displayGoogleImage(data){
 	console.log(data, "displayGoogleImage ran");
-	$('.main-search-page').html('<div class="large-image col-6"></div><section class="google-image-results col-12"><ul class="slides"></ul></section>');
+	$('.main-search-page').html(
+		'<div class="row">' +
+			'<div class="large-image col-6">'+
+			'</div>'+
+		'</div>'+
+		'<div class="row">'+
+		'<div class="col-12">'+
+			
+				'<ul class="slides"></ul>'+
+		'</div></div>)');
 	for (let i=0; i<10; i++){
 		const imageUrl= data.items[i].pagemap.cse_image[0].src;
-			$('.slides').append(`<li class="slide col-1" ><img src="${imageUrl}"/></li>`)}
+			$('.slides').append(`<li class=" slide" ><span class="col-1"><img src="${imageUrl}"/></span></li>`)}
 }
 
 //function renderGoogleImage(imageUrl){
