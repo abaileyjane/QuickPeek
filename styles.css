@@ -1,7 +1,11 @@
 /*font-family: 'Monoton', cursive;
 font-family: 'Special Elite', cursive;*/
 
-
+img{
+	max-height: 100%;
+	max-width: 100%;
+	margin-top: auto;
+}
 body {
 	background-color: darkseagreen;
 }
@@ -13,7 +17,6 @@ body {
 	display: block;
 }
 .new-york-times-results,.guardian-results {
-	overflow:auto;
 }
 
 .nyTimes, .guardian{
@@ -36,8 +39,8 @@ body {
 }
 
 .ny-section-heading, .guardian-section-heading{
-	background-color: green;
-	height:100px;
+	position:fixed;
+	height: 75px;
 
 }
 h1{
@@ -69,9 +72,9 @@ h2{
 }
 
 
-.large-image{
-	background-color: purple;
-	height:500px;
+#large-image{
+	height:300px;
+
 }
 
 

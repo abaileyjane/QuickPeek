@@ -45,8 +45,9 @@ function displayGoogleImage(data){
 	console.log(data, "displayGoogleImage ran");
 	$('.main-search-page').html(
 		'<div class="row">' +
-			'<div class="large-image col-6">'+
-			'</div>'+
+			
+				'<img id="large-image" src=""/>'+
+		
 		'</div>'+
 		'<div class="row">'+
 		'<div class="col-12">'+
@@ -55,12 +56,11 @@ function displayGoogleImage(data){
 		'</div></div>)');
 	for (let i=0; i<10; i++){
 		const imageUrl= data.items[i].pagemap.cse_image[0].src;
-			$('.slides').append(`<li class=" slide" ><span class="col-1"><img src="${imageUrl}"/></span></li>`)}
+			$('.slides').append(`<li class="slide" ><span class="col-1"><img class="thumbnail" src="${imageUrl}"/></span></li>`)}
+	watchImageClick();
 }
 
-//function renderGoogleImage(imageUrl){
-	//return `<li class="slide col-1" ><img src="${imageUrl}"/></li>`
-//}
+
 
 function getDataFromNYTimesApi(searchTerm, callback){
 	const query = {
@@ -98,20 +98,19 @@ function watchSubmit(){
 		getDataFromNYTimesApi(query, displayTimesArticles);
 		getDataFromGuardianApi(query, displayGuardianArticles);
 		getDataFromGoogleImageApi(query, displayGoogleImage);
-		watchImageClick();
+		
 	})
 }
 
 function watchImageClick(){
-	$(".slide").on('click', function(event){
+	console.log('watchImageClick ran');
+	$(".thumbnail").on('click', function(event){
 		event.preventDefault();
-		const thumbnailUrl= $(this).find('img').attr('src');
-		console.log('the click registered!! this is the URL', thumbnailUrl)
-		$('.large-image').attr('src', thumbnailUrl);
+		const thumbnailUrl= $(this).attr('src');
+		console.log('the click registered!! this is the URL', thumbnailUrl);
+		$('#large-image').attr('src', thumbnailUrl);
 	})
 }
 
 
-$(watchSubmit);
-$(watchImageClick);
-//$('#slider .slides').animate({margin-left -=720}, 1000);
+$(document).ready(watchSubmit)
