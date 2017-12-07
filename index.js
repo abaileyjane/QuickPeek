@@ -58,6 +58,7 @@ function displayGoogleImage(data){
 	for (let i=0; i<10; i++){
 		const imageUrl= data.items[i].pagemap.cse_image[0].src;
 			$('.slides').append(`<li class="slide" ><span class="col-1"><img class="thumbnail" src="${imageUrl}"/></span></li>`)}
+	$('#large-image').attr('src', data.items[0].pagemap.cse_image[0].src);
 	watchImageClick();
 }
 
@@ -79,15 +80,28 @@ function displayTimesArticles(data){
 
 function renderTimesResult(result){
 	console.log("renderTimesResult ran")
-	return `
+	try {
+		return `
 	<article class="nyTimesArticle">
-		<a href="${result.web_url}">
-			<img class="thumbnail" src="http://www.nytimes.com/${result.multimedia[2].url}">
-			<h3>${result.headline.main}</h3>
-		</a>
-		<p>${result.snippet}</p>
+		<div class="row">
+			<a href="${result.web_url}">
+				<img class="thumbnail" src="http://www.nytimes.com/${result.multimedia[2].url}">
+				<div class="col-3">
+					<h3>${result.headline.main}</h3>
+				</div>
+			</a>
+		</div>
+		<div class="row">
+			<p>${result.snippet}</p>
+		</div>
 		`
+	}
+
+	catch(err) {
+		return('<h3> No results found</h3>')
+	}
 }
+
 
 
 function watchSubmit(){
@@ -96,9 +110,11 @@ function watchSubmit(){
 		event.preventDefault();
 		const query = $(".keyword").val();
 		console.log(query);
+		$(".main").prop('hidden', false);
 		getDataFromNYTimesApi(query, displayTimesArticles);
 		getDataFromGuardianApi(query, displayGuardianArticles);
 		getDataFromGoogleImageApi(query, displayGoogleImage);
+		$('.search-term-container').html(`<h4> ${query} </h4>`)
 		
 	})
 }
