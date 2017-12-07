@@ -53,7 +53,8 @@ function displayGoogleImage(data){
 		'<div class="col-12">'+
 			
 				'<ul class="slides"></ul>'+
-		'</div></div>)');
+		'</div></div>')
+		;
 	for (let i=0; i<10; i++){
 		const imageUrl= data.items[i].pagemap.cse_image[0].src;
 			$('.slides').append(`<li class="slide" ><span class="col-1"><img class="thumbnail" src="${imageUrl}"/></span></li>`)}
@@ -79,7 +80,7 @@ function displayTimesArticles(data){
 function renderTimesResult(result){
 	console.log("renderTimesResult ran")
 	return `
-	<article>
+	<article class="nyTimesArticle">
 		<a href="${result.web_url}">
 			<img class="thumbnail" src="http://www.nytimes.com/${result.multimedia[2].url}">
 			<h3>${result.headline.main}</h3>
