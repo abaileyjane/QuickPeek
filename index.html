@@ -8,30 +8,53 @@
 		<link href="floatgrid.css" rel="stylesheet" type="text/css"/>
 
 		<link href="https://fonts.googleapis.com/css?family=Monoton|Special+Elite" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 
 	<body>
 		<div class="main-search-page">
-				<div id="title-container" class="col-6">
+
+					<div class="row ceo-pictures" style="position:relative; z-index: 0">
+							<div class="col-6">
+								<div class="guardian-ceo"></div>
+							</div>
+							<div class="col-6">
+							<div class="NYTimes-ceo"></div>
+						</div>
+					</div>
+
+					<div class='row' style='z-index:1; background-color:#FFD97D;opacity:.5; margin-top: -600px; height:600px; position:relative'>
+					</div>
 					
-						<h1>The Conglomerator</h1>
-								
-					<section class="heading-logos">
-						<img class="logo col-3" src="http://thisisstory.com/wp-content/uploads/2015/03/New-York-Times-logo.png" alt="New York Times logo" >
-						<img class="logo col-3" src="https://i1.wp.com/fmguido.com/wp-content/uploads/2017/06/the-guardian-logo.png" alt="The Guardian Logo">
-					</section>
-				</div>
+					<div class='row' style="position: relative; margin-top: -500px; z-index: 2">
+						<div class='col-6' style="position: relative; margin-top: -515px; margin-left:150px; z-index: 2; background-color: #FF9B85;border-bottom:6px dashed black; border-right:4px #60d394 solid">
+							<h1 style=" position:relative; z-index: 2">Quick Peek</h1>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class='col-4' style='position: relative; margin-top: -415px; margin-left:450px; z-index: 3; background-color:#FF9B85; border-top:dashed 6px black; border-left:4px #60d394 solid' >
+							<div style=' padding:5px '>
+								<p>Keeping up with the latest scoop is hard. That's why QuickPeek is here to help. Enter a keyword below and get a smattering of the latest articles on your topic from the Guardian and the Times. No more multi-site searching or cross referencing tabs. It it's news, we'll give you a quick peek.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class='row'>
+						<div class="search col-6" id="main-page-search-bar" style='height:75px;position: relative; margin-top: -150px; margin-left:300px; z-index: 3; background-color:#FF9B85; border-top:solid 4px black; padding-top:10px' >
+							<form action="#" class="search-form" label="Search for news">
+								<input style="height:50px; width:400px; font-size:30px; border:#60d394 solid 4px; border-radius:5px; font-family:'barlow Semi Condensed', sans-serif;" class="keyword" type="text" placeholder="Search for news...">
+								<button class="submit-button" type="submit" style="font-family: 'Barlow Semi Condensed', sans-serif; background-color:#FFD97D; height:45px; width:60px; border:#60d394 solid 4px; border-radius:5px">PEEK!</button>
+							</form>
+						</div>	
+					</div>
+			</div>			
+					
+		
 				<br>
-				<div class="search col-3" id="main-page-search-bar" >
-					<form action="#" class="search-form" label="Search for news">
-						<input class="keyword" type="text" placeholder="Search for news...">
-						<button class="submit-button" type="submit">Go!</button>
-					</form>
-				</div>
-				<article class="page-description col-4">
-					<p>News is rarely unbiased. As a citizen looking for the whole truth, the conglomerator recognizes your need for news coverage from a variety of sources. Enter your keyword and be transported to side by side articles from the Guardian and the Times. It's reaching the truth in the middle...made easy.  </p>			
-				</article>
+				
+				
 		</div>
 		<main class="main" role="main" hidden>
 		<div class="results-page">
