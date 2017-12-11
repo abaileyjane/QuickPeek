@@ -21,7 +21,7 @@ p{
 }
 
 .nyTimes, .guardian{
-	background-color:aliceblue;
+	background-color:#ffeab8;
 	border-style: solid;
 	border-color: black;
 	border-width:2px;
@@ -32,10 +32,9 @@ p{
 
 .search-term-container{
 	width:100%;
-
-	background-color:white;
 	text-align: center;
-	font-size: 30px
+	font-size: 30px;
+	text-transform: uppercase
 }
 .nyTimesArticle{
 	border-color: white;
@@ -44,14 +43,11 @@ p{
 	background-color: gray;
 }
 
-#title-container{
-	height:600px;
-	background-color: white;
-}
+
 
 .ny-section-heading, .guardian-section-heading{
 	position:absolute;
-	background-color:aliceblue;
+	background-color:#ffeab8;
 	width:43%;
 	height: 125px;
 

@@ -44,13 +44,13 @@ $.getJSON(IMAGE_SEARCH_URL, query, callback);
 function displayGoogleImage(data){
 	console.log(data, "displayGoogleImage ran");
 	$('.main-search-page').html(
-		'<div class="row">' +
+		'<div class="row" style="text-align: center">' +
 			
 				'<img id="large-image" src=""/>'+
 		
 		'</div>'+
 		'<div class="row">'+
-		'<div class="col-12">'+
+		'<div class="col-12" style="">'+
 			
 				'<ul class="slides"></ul>'+
 		'</div></div>')
