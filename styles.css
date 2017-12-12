@@ -68,14 +68,7 @@ a{
 }
 
 
-.ny-section-heading, .guardian-section-heading{
-	position:absolute;
-	background-color:#fff8e7;
-	width:43%;
-	height: 125px;
-	text-align: center;
 
-}
 h1{
 	font-size: 45px;
 	left:60px;
@@ -86,13 +79,7 @@ h1{
 	font-family: 'Monoton', cursive;
 }
 
-h2{
-	font-size: 40px;
-	color: black;
-	top:0;
-	font-family: 'Monoton', cursive;
 
-}
 h3{
 	font-size: 25px
 }

@@ -65,12 +65,12 @@ function displayGoogleImage(data){
 			'</div>'+
 		'</div>'+
 
-		'<div class="row" style="">' +
+		'<div class="row hide" style="">' +
 			
 				'<img id="large-image" src=""/>'+
 		
 		'</div>'+
-		'<div class="row">'+
+		'<div class="row hide">'+
 		'<div class="col-12" style="">'+
 			
 				'<ul class="slides"></ul>'+
