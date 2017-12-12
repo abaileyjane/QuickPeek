@@ -23,11 +23,19 @@ function displayGuardianArticles(data){
 function renderGuardianResult(result){
 	console.log("renderGuardianResult ran")
 	return `
-	<article>
-		<a href="${result.webUrl}">
-		<img src="${result.fields.thumbnail}">
-			<h3>${result.webTitle}</h3>
-		</a>
+	<article class="guardian-article">
+		<div class="row">
+			<div class="col-6">
+				<img src="${result.fields.thumbnail}">
+			</div>
+
+			<div class="col-6">
+				<a href="${result.webUrl}">
+					<h3>${result.webTitle}</h3>
+				</a>
+			</div>
+		</div>
+	</article>
 
 		`
 }
@@ -84,16 +92,24 @@ function renderTimesResult(result){
 		return `
 	<article class="nyTimesArticle">
 		<div class="row">
-			<a href="${result.web_url}">
-				<img class="thumbnail" src="http://www.nytimes.com/${result.multimedia[2].url}">
-				<div class="col-3">
+			<div class="col-12" style="text-align:right">
+				<a href="${result.web_url}">
 					<h3>${result.headline.main}</h3>
-				</div>
-			</a>
+				</a>
+			</div>
 		</div>
+
 		<div class="row">
-			<p>${result.snippet}</p>
+			<div class="col-6"
+				<a href="${result.web_url}">
+					<img class="thumbnail" src="http://www.nytimes.com/${result.multimedia[2].url}">
+				</a>
+			</div>
+			<div class="col-6">
+				<p>${result.snippet}</p>
+			</div>
 		</div>
+	</article>
 		`
 	}
 
@@ -114,7 +130,7 @@ function watchSubmit(){
 		getDataFromNYTimesApi(query, displayTimesArticles);
 		getDataFromGuardianApi(query, displayGuardianArticles);
 		getDataFromGoogleImageApi(query, displayGoogleImage);
-		$('.search-term-container').html(`<h4> ${query} </h4>`)
+		$('.search-term-container').html(`<h1> ${query} </h1>`)
 		
 	})
 }
