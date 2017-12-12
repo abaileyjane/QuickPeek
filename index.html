@@ -2,48 +2,87 @@
 <html lang=en>
 	<head>
 		<meta charset="utf-8">
-		<meta name = "viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>News Conglomeration</title>
 		<link href="styles.css" rel="stylesheet" type="text/css"/>
+		<link href="floatgrid.css" rel="stylesheet" type="text/css"/>
+
+		<link href="https://fonts.googleapis.com/css?family=Monoton|Special+Elite" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 
 	<body>
-		<div class="main-search-page">
-			<section id="main-search-page-heading">
-				<article id="page-title">
-					<h1>The Conglomerator</h1>
-				</article>
-				<article id="logos">
-					<img src="http://thisisstory.com/wp-content/uploads/2015/03/New-York-Times-logo.png" alt="New York Times logo">
-					<img src="https://seeklogo.com/images/T/twitter-2012-negative-logo-5C6C1F1521-seeklogo.com.png" alt="Twitter logo">
-					<img src="https://i1.wp.com/fmguido.com/wp-content/uploads/2017/06/the-guardian-logo.png" alt="The Guardian Logo">
-				</article>
-				<article class="search" id="main-page-search-bar">
-					<form action="#" class="search-form" label="Search for news">
-						<input class="keyword" type="text" placeholder="Search for news...">
-						<button class="submit-button" type="submit">Go!</button>
-					</form>
-				</article>
-				<article id="page-description">
-					<p>News is rarely unbiased. As a citizen looking for the whole truth, the conglomerator recognizes your need for news coverage from a variety of sources. Enter your keyword and be transported to side by side articles from the Guardian and the Times, complete with tweets on the topic from real people. It's reaching the truth in the middle...made easy.  </p>			
-				</article>
-			</section>
-		</div>
-		
-		<div class="results-page">
-			<section class="google-image-results">
-				
-			</section>
-			<section class="new-york-times-results">
-				<h2>New York Times</h2>
-			</section>
-			<section class="guardian-results">
-				<h2>The Guardian</h2>
-			</section>
-			<section class="twitter-results"></section>
-		</div>
+		<div class="main-search-page" style="background-color:#ffeab8">
 
+					<div class="row ceo-pictures" style="position:relative; z-index: 0">
+							<div class="col-6">
+								<div class="guardian-ceo"></div>
+							</div>
+							<div class="col-6">
+							<div class="NYTimes-ceo"></div>
+						</div>
+					</div>
+
+					<div class='row' style='z-index:1; background-color:#FFD97D;opacity:.5; margin-top: -600px; height:600px; position:relative'>
+					</div>
+					
+					<div class='row' style="position: relative; margin-top: -500px; z-index: 2">
+						<div class='col-6' style="position: relative; margin-top: -515px; margin-left:150px; z-index: 2; background-color: #FF9B85;border-bottom:6px dashed black; border-right:4px #60d394 solid">
+							<h1 style=" position:relative; z-index: 2">Quick Peek</h1>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class='col-4' style='position: relative; margin-top: -415px; margin-left:450px; z-index: 3; background-color:#FF9B85; border-top:dashed 6px black; border-left:4px #60d394 solid' >
+							<div style=' padding:5px '>
+								<p>Keeping up with the latest scoop is hard. That's why QuickPeek is here to help. Enter a keyword below and get a smattering of the latest articles on your topic from the Guardian and the Times. No more multi-site searching or cross referencing tabs. It it's news, we'll give you a quick peek.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class='row'>
+						<div class="search col-6" id="main-page-search-bar" style='height:75px;position: relative; margin-top: -150px; margin-left:300px; z-index: 3; background-color:#FF9B85; border-top:solid 4px black; padding-top:10px' >
+							<form action="#" class="search-form" label="Search for news">
+								<input style="height:50px; width:400px; font-size:30px; border:#60d394 solid 4px; border-radius:5px; font-family:'barlow Semi Condensed', sans-serif;" class="keyword" type="text" placeholder="Search for news...">
+								<button class="submit-button" type="submit" style="font-family: 'Barlow Semi Condensed', sans-serif; background-color:#FFD97D; height:45px; width:60px; border:#60d394 solid 4px; border-radius:5px">PEEK!</button>
+							</form>
+						</div>	
+					</div>
+			</div>			
+					
+				
+		<main style="background-color:#ffeab8; height:665px; " class="main" role="main" hidden>
+			<div class="results-page" style="background-color:#ffeab8">
+				<div class="col-12">
+					<div class="row" style="background-color: #FF9B85">
+						<div class="search-term-container">
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="nyTimes">
+						<div class="row ny-section-heading" style="width:45%">
+							<heading></heading>
+						</div>
+						<div class="row">
+							<section class="new-york-times-results">
+							</section>
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="guardian">
+						<div class="row">
+							<heading class="guardian-section-heading"></heading>
+						</div>
+						<div class="row">
+							<section class="guardian-results"></section>
+						</div>
+					</div>
+				</div>
+			</div>
+	</main>
 		<script src="index.js"></script>
 	</body>
 	</html>
