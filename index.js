@@ -17,6 +17,7 @@ function displayGuardianArticles(data){
 	console.log(data, "displayGuardianArticles ran");
 	const results = data.response.results.map((item,index)=> renderGuardianResult(item));
 	$('.guardian-section-heading').html('<h2>The Guardian</h2>')
+	$('.guardian-results').html("");
 	$('.guardian-results').append(results);
 }	
 
@@ -52,7 +53,19 @@ $.getJSON(IMAGE_SEARCH_URL, query, callback);
 function displayGoogleImage(data){
 	console.log(data, "displayGoogleImage ran");
 	$('.main-search-page').html(
-		'<div class="row" style="text-align: center">' +
+		'<div class="row" style="background-color:#FF9B85; height:100px; border-bottom: black dashed 4px">'+
+			'<div class="col-4">'+
+				'<h1>QuickPeek</h1>'+
+			'</div>'+
+			'<div class="4-col" style="margin-top:25px; float:right; margin-right:10vw">'+
+				'<form action="#" class="search-form" label="Search for news">'+
+					'<input style="height:50px; width:33vw; font-size:30px; border:#60d394 solid 4px; border-radius:5px; font-family:"barlow Semi Condensed", sans-serif;" class="keyword" type="text" placeholder="Search for news...">'+
+						'<button class="submit-button" type="submit" style="font-family: "Barlow Semi Condensed", sans-serif; background-color:#FFD97D; height:45px; width:60px; border:#60d394 solid 4px; border-radius:5px">PEEK!</button>'+
+				'</form>'+
+			'</div>'+
+		'</div>'+
+
+		'<div class="row" style="">' +
 			
 				'<img id="large-image" src=""/>'+
 		
@@ -68,6 +81,7 @@ function displayGoogleImage(data){
 			$('.slides').append(`<li class="slide" ><span class="col-1"><img class="thumbnail" src="${imageUrl}"/></span></li>`)}
 	$('#large-image').attr('src', data.items[0].pagemap.cse_image[0].src);
 	watchImageClick();
+	watchSubmit();
 }
 
 
@@ -84,6 +98,7 @@ function displayTimesArticles(data){
 	console.log(data, "displayTimesArticles ran");
 	const results = data.response.docs.map((item,index)=> renderTimesResult(item));
 	$('.ny-section-heading').html('<h2>The New York Times</h2>');
+	$('.new-york-times-results').html("");
 	$('.new-york-times-results').append(results);}	
 
 function renderTimesResult(result){
@@ -119,7 +134,6 @@ function renderTimesResult(result){
 }
 
 
-
 function watchSubmit(){
 	$(".submit-button").click(event=>{
 		console.log("watchSubmit ran");
@@ -147,3 +161,4 @@ function watchImageClick(){
 
 
 $(document).ready(watchSubmit)
+

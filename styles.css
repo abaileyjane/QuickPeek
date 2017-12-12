@@ -113,9 +113,8 @@ background-size:cover;
 
 #large-image{
 	height:300px;
-	float:center;
-	border:;
-}
+text-align: center;
+margin-top: 20px}
 
 
 .slide {
