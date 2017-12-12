@@ -46,14 +46,46 @@
 }
 
 /* Mobile defaults */
+ .hide{
+    display:none;
+  }
+
 .col-3, .col-4, .col-6, .col-12, .col-1 {
   width: 100%;
+
+}
+
+.ny-section-heading{
+  position:absolute;
+  background-color:#fff8e7;
+  width:83%;
+  height: 75px;
+  text-align: center;
+
+}
+.guardian-section-heading{
+position:absolute;
+  background-color:#fff8e7;
+  width:83%;
+  height: 75px;
+  text-align: center;
+}
+
+h2{
+  font-size: 5vw;
+  color: black;
+  top:0;
+  font-family: 'Monoton', cursive;
+
 }
 
 
 /* Non-mobile, grid */
 @media only screen and (min-width: 640px) {
   /* 3 columns, 3/12 in % */
+  .hide{
+    display:block;
+  }
   .col-3 {
     width: 25%;
   }
@@ -76,4 +108,28 @@
   .col-1 {
     width:8.3333%;
   }
+
+  .ny-section-heading{
+  position:absolute;
+  background-color:#fff8e7;
+  width:45%;
+  height: 125px;
+  text-align: center;
+
+}
+.guardian-section-heading{
+position:absolute;
+  background-color:#fff8e7;
+  width:43%;
+  height: 125px;
+  text-align: center;
+}
+
+h2{
+  font-size: 40px;
+  color: black;
+  top:0;
+  font-family: 'Monoton', cursive;
+
+}
 }
