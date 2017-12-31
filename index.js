@@ -15,15 +15,22 @@ $.getJSON(GUARDIAN_SEARCH_URL, query, callback);
 
 function displayGuardianArticles(data){
 	console.log(data, "displayGuardianArticles ran");
-	const results = data.response.results.map((item,index)=> renderGuardianResult(item));
-	$('.guardian-section-heading').html('<h2>The Guardian</h2>')
-	$('.guardian-results').html("");
-	$('.guardian-results').append(results);
+	if (data.response.results.length===0){
+		$('.guardian-section-heading').html('<h2>The Guardian</h2>')
+		$('.guardian-results').html("");
+		$('.guardian-results').append(`<h3>No results found</h3>`);
+	}
+	else{
+		const results = data.response.results.map((item,index)=> renderGuardianResult(item));
+		$('.guardian-section-heading').html('<h2>The Guardian</h2>')
+		$('.guardian-results').html("");
+		$('.guardian-results').append(results);
+	}
 }	
 
 function renderGuardianResult(result){
 	console.log("renderGuardianResult ran")
-	return `
+	try{ return `
 	<article class="guardian-article">
 		<div class="row">
 			<div class="col-6">
@@ -38,7 +45,11 @@ function renderGuardianResult(result){
 		</div>
 	</article>
 
-		`
+		`}
+	catch(err){
+		console.log("We are in the CATCH log for guardian"+err);
+		return('')
+	}
 }
 
 function getDataFromGoogleImageApi(searchTerm, callback){
@@ -76,10 +87,18 @@ function displayGoogleImage(data){
 				'<ul class="slides"></ul>'+
 		'</div></div>')
 		;
-	for (let i=0; i<10; i++){
+	try{
+		for (let i=0; i<10; i++){
 		const imageUrl= data.items[i].pagemap.cse_image[0].src;
 			$('.slides').append(`<li class="slide" ><span class="col-1"><img class="thumbnail" src="${imageUrl}"/></span></li>`)}
-	$('#large-image').attr('src', data.items[0].pagemap.cse_image[0].src);
+		$('#large-image').attr('src', data.items[0].pagemap.cse_image[0].src);
+	}
+	catch(err){
+		console.log("there is an error in google image"+err);
+			watchImageClick();
+	watchSubmit();
+		return('')
+	}
 	watchImageClick();
 	watchSubmit();
 }
@@ -96,11 +115,18 @@ $.getJSON(NYTIMES_SEARCH_URL, query, callback);
 
 function displayTimesArticles(data){
 	console.log(data, "displayTimesArticles ran");
-	const results = data.response.docs.map((item,index)=> renderTimesResult(item));
-	$('.ny-section-heading').html('<h2>The New York Times</h2>');
-	$('.new-york-times-results').html("");
-	$('.new-york-times-results').append(results);}	
-
+	if (data.response.docs.length===0){
+		$('.ny-section-heading').html('<h2>The New York Times</h2>');
+		$('.new-york-times-results').html("");
+		$('.new-york-times-results').append(`<h3>No results found.</h3>`);
+		}
+	else{
+		const results = data.response.docs.map((item,index)=> renderTimesResult(item));
+		$('.ny-section-heading').html('<h2>The New York Times</h2>');
+		$('.new-york-times-results').html("");
+		$('.new-york-times-results').append(results);	
+		}
+	}
 function renderTimesResult(result){
 	console.log("renderTimesResult ran")
 	try {
@@ -129,7 +155,8 @@ function renderTimesResult(result){
 	}
 
 	catch(err) {
-		return('<h3> No results found</h3>')
+		console.log("We are in the CATCH log for nt times"+err)
+		return('')
 	}
 }
 
