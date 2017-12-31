@@ -8,10 +8,145 @@ img{
 p, h3{
 	font-family: 'Barlow Semi Condensed', sans-serif;
 }
+@media only screen and (max-width: 640px){
+	.main-search-page{
+		background-color:#ffeab8;
+	}
+	.row .ceo-pictures .hide{
+		display:none;
+	}
 
-.main-search-page{
-	position:relative;
-	background-color:#ffeab8;
+	#opaque-layer{
+		display: none
+	}
+	.actual-text{
+	
+	}
+
+	.main-title{
+
+		
+	}
+	.title-text{	
+		margin-bottom:20px;
+		background-color: #FF9B85;
+		border-bottom:6px dashed black; 
+		border-right:4px #60d394 solid
+	}
+
+	.description-box{ 
+		background-color:#FF9B85; 
+		border-top:dashed 6px black; 
+		border-left:4px #60d394 solid
+	}
+
+	.description-text{
+		padding:5px
+	}
+	.main-search-bar{
+		display:inline;
+		height:75px;
+		background-color:#FF9B85; 
+		padding-top:10px 
+	}
+
+	.search-input{
+		height:50px; 
+		width:60vw; 
+		font-size:30px; 
+		border:#60d394 solid 4px; 
+		border-radius:5px; 
+		font-family:'barlow Semi Condensed', sans-serif
+	}
+
+	.submit-button{
+		font-family: 'Barlow Semi Condensed', sans-serif; 
+		background-color:#FFD97D; 
+		height:45px; 
+		width:20vw; 
+		border:#60d394 solid 4px; 
+		border-radius:5px
+	}
+}
+@media only screen and (min-width: 640px){
+	.main-search-page{
+		position:relative;
+		background-color:#ffeab8;
+	}
+	.row .ceo-pictures{
+		position:relative; 
+		z-index: 0
+	}
+
+	#opaque-layer{
+		z-index:1; 
+		background-color:#FFD97D;
+		opacity:.5; 
+		margin-top: -600px; 
+		height:600px; 
+		position:relative
+	}
+	.actual-text{
+		position:relative; 
+		z-index: 2
+	}
+
+	.main-title{
+		position: relative; 
+		margin-top: -500px; 
+		z-index: 2
+	}
+	.title-text{
+		position: relative; 
+		margin-top: -515px; 
+		margin-left:150px; 
+		z-index: 2; 
+		background-color: #FF9B85;
+		border-bottom:6px dashed black; 
+		border-right:4px #60d394 solid
+	}
+
+	.description-box{
+		position: relative; 
+		margin-top: -415px; 
+		margin-left:450px; 
+		z-index: 3; 
+		background-color:#FF9B85; 
+		border-top:dashed 6px black; 
+		border-left:4px #60d394 solid
+	}
+
+	.description-text{
+		padding:5px
+	}
+	.main-search-bar{
+		height:75px;
+		position: relative; 
+		margin-top: -150px; 
+		margin-left:300px; 
+		z-index: 3; 
+		background-color:#FF9B85; 
+		border-top:solid 4px black; 
+		padding-top:10px 
+	}
+
+	.search-input{
+		height:50px; 
+		width:400px; 
+		font-size:30px; 
+		border:#60d394 solid 4px; 
+		border-radius:5px; 
+		font-family:'barlow Semi Condensed', sans-serif
+	}
+
+	.submit-button{
+		font-family: 'Barlow Semi Condensed', sans-serif; 
+		background-color:#FFD97D; 
+		height:45px; 
+		width:60px; 
+		border:#60d394 solid 4px; 
+		border-radius:5px
+	}
 }
 .results-page{
 	display: block;
