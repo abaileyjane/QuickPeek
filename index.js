@@ -38,7 +38,7 @@ function renderGuardianResult(result){
 			</div>
 
 			<div class="col-6">
-				<a href="${result.webUrl}">
+				<a href="${result.webUrl}" target="_blank">
 					<h3>${result.webTitle}</h3>
 				</a>
 			</div>
@@ -64,14 +64,14 @@ $.getJSON(IMAGE_SEARCH_URL, query, callback);
 function displayGoogleImage(data){
 	console.log(data, "displayGoogleImage ran");
 	$('.main-search-page').html(
-		'<div class="row" style="background-color:#FF9B85; height:100px; border-bottom: black dashed 4px">'+
+		'<div class="row" style="background-color:#FF9B85; height:auto; border-bottom: black dashed 4px">'+
 			'<div class="col-4">'+
-				'<h1>QuickPeek</h1>'+
+				'<h5>QuickPeek</h5>'+
 			'</div>'+
-			'<div class="4-col" style="margin-top:25px; float:right; margin-right:10vw">'+
+			'<div class="4-col" style="margin-top:25px; float:right">'+
 				'<form action="#" class="search-form" label="Search for news">'+
-					'<input style="height:50px; width:33vw; font-size:30px; border:#60d394 solid 4px; border-radius:5px; font-family:"barlow Semi Condensed", sans-serif;" class="keyword" type="text" placeholder="Search for news...">'+
-						'<button class="submit-button" type="submit" style="font-family: "Barlow Semi Condensed", sans-serif; background-color:#FFD97D; height:45px; width:60px; border:#60d394 solid 4px; border-radius:5px">PEEK!</button>'+
+					'<input  class="search-input keyword" type="text" placeholder="Search for news...">'+
+						'<button class="submit-button" type="submit" >PEEK!</button>'+
 				'</form>'+
 			'</div>'+
 		'</div>'+
@@ -133,16 +133,16 @@ function renderTimesResult(result){
 		return `
 	<article class="nyTimesArticle">
 		<div class="row">
-			<div class="col-12" style="text-align:right">
-				<a href="${result.web_url}">
+			<div class="col-12">
+				<a href="${result.web_url}" target="_blank">
 					<h3>${result.headline.main}</h3>
 				</a>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-6"
-				<a href="${result.web_url}">
+			<div class="col-3"
+				<a href="${result.web_url}" target="_blank">
 					<img class="thumbnail" src="http://www.nytimes.com/${result.multimedia[2].url}">
 				</a>
 			</div>
