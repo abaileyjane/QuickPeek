@@ -11,6 +11,19 @@ p, h3{
 	font-family: 'Barlow Semi Condensed', sans-serif;
 }
 @media only screen and (max-width: 819px){
+
+	.ny-section-heading, .guardian-section-heading{
+
+	border-top: black solid 2px;
+	border-right:black solid 2px;
+	border-left: black solid 2px;;
+  background-color:#fff8e7;
+  width:auto;
+  height: 110px;
+  text-align: center;
+  margin-bottom:0px;
+}
+
 	.nyTimes{
 		margin-bottom:10px;
 	}
@@ -72,6 +85,7 @@ p, h3{
 	justify-content: space-evenly; }
 
 	.submit-button{
+		font-size: 2em;
 		font-family: 'Barlow Semi Condensed', sans-serif; 
 		background-color:#FFD97D; 
 		height:50px; 
@@ -100,6 +114,18 @@ p, h3{
 	clear:both
 }
 
+.ny-section-heading, .guardian-section-heading{
+
+	border-top: black solid 2px;
+	border-right:black solid 2px;
+	border-left: black solid 2px;;
+  background-color:#fff8e7;
+  width:auto;
+  height: 135px;
+  text-align: center;
+  margin-bottom:0px;
+}
+
 h5{
 	font-size: 5vw;
 	left:60px;
@@ -111,7 +137,6 @@ h5{
 	margin-bottom: 0vh
 }
 	.main-search-page{
-		height:100vh;
 		position:relative;
 		background-color:#ffeab8;
 	}
@@ -183,6 +208,7 @@ h5{
 	justify-content: space-evenly; }
 
 .search-input{
+	padding-left: 10px;
 		height:10vh; 
 		width:30vw; 
 		font-size:4vh; 
@@ -197,7 +223,7 @@ h5{
 		height:10vh; 
 		width:10vw; 
 		border:#60d394 solid 4px; 
-		border-radius:5px
+		border-radius:5px;
 		font-size:4vh;
 	}
 
@@ -234,6 +260,7 @@ a{
 }
 .thumbnail{
 	margin-right: 25px
+	width:10vw;
 }
 
 .search-term-container{
@@ -244,17 +271,7 @@ a{
 	text-decoration: overline dashed #60d394;
 
 }
-.ny-section-heading, .guardian-section-heading{
 
-	border-top: black solid 2px;
-	border-right:black solid 2px;
-	border-left: black solid 2px;;
-  background-color:#fff8e7;
-  width:auto;
-  height: 170px;
-  text-align: center;
-  margin-bottom:0px;
-}
 
 
 .nyTimesArticle{

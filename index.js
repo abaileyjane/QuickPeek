@@ -36,7 +36,6 @@ function renderGuardianResult(result){
 			<div class="col-6">
 				<img src="${result.fields.thumbnail}">
 			</div>
-
 			<div class="col-6">
 				<a href="${result.webUrl}" target="_blank">
 					<h3>${result.webTitle}</h3>
@@ -44,7 +43,6 @@ function renderGuardianResult(result){
 			</div>
 		</div>
 	</article>
-
 		`}
 	catch(err){
 		console.log("We are in the CATCH log for guardian"+err);
@@ -68,7 +66,7 @@ function displayGoogleImage(data){
 			'<div class="col-4">'+
 				'<h5>QuickPeek</h5>'+
 			'</div>'+
-			'<div class="4-col" style="margin-top:25px; float:right">'+
+			'<div class="4-col" style="margin-top:3.3vw; float:right">'+
 				'<form action="#" class="search-form" label="Search for news">'+
 					'<input  class="search-input keyword" type="text" placeholder="Search for news...">'+
 						'<button class="submit-button" type="submit" >PEEK!</button>'+
@@ -82,9 +80,10 @@ function displayGoogleImage(data){
 		
 		'</div>'+
 		'<div class="row hide">'+
-		'<div class="col-12" style="">'+
+		'<div class="col-12" style="margin-left:6vw">'+
 			
 				'<ul class="slides"></ul>'+
+
 		'</div></div>')
 		;
 	try{
@@ -139,7 +138,6 @@ function renderTimesResult(result){
 				</a>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-3"
 				<a href="${result.web_url}" target="_blank">
@@ -188,4 +186,3 @@ function watchImageClick(){
 
 
 $(document).ready(watchSubmit)
-
