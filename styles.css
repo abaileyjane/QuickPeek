@@ -29,6 +29,7 @@ p, h3{
 	}
 	.main-search-page{
 		background-color:#ffeab8;
+		height:auto;
 	}
 	.row .ceo-pictures .hide{
 		display:none;
